@@ -28,14 +28,14 @@ mongoose.connect(process.env.MONGODB_URL, { useUnifiedTopology: true, useNewUrlP
 
 
 // Home page endpoint for when heroku is launched
-// app.get('https://cpnt262-a5-nhat.herokuapp.com/', (req, res) => {
-//   res.send(`
-//     <h1>Hello please add the following to your URL</h1>
-//     <p>add '/api/v0/cars' to get an array of car objects</p>
-//     <h2>OR</h2>
-//     <p>add '/api/v0/cars/:id' to get a SPECIFIC car object based on the ID entered **Be sure to change ':id' to a number from 1-10**</p>
-//   `)
-// });
+app.get('/', (req, res) => {
+  res.send(`
+    <h1>Hello please add the following to your URL</h1>
+    <p>add '/api/v0/cars' to get an array of car objects</p>
+    <h2>OR</h2>
+    <p>add '/api/v0/cars/:id' to get a SPECIFIC car object based on the ID entered **Be sure to change ':id' to a number from 1-10**</p>
+  `)
+});
 
 // JSON endpoint : array of car objects
 app.get('/api/v0/cars', (req, res) => {
