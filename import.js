@@ -1,6 +1,6 @@
 // Import modules
 const mongoose = require('mongoose');
-require('dotenv').config();
+const dotenv = require('dotenv').config();
 
 // Import seed file
 const dbSeed = require(`./seeds/cars.js`);
@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URL, {
 let db = mongoose.connection;
 
 db.on('error', function(error){
-  console.log(`Error: ${error.message}`)
+  console.log(`Error: ${error.message}`);
 });
 
 db.once('open', function() {
@@ -27,6 +27,6 @@ db.once('open', function() {
 });
 
 Car.insertMany(dbSeed, function(error, car) {
-  console.log('Data imported...')
+  console.log('Data imported...');
   mongoose.connection.close();
 });

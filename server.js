@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 // Set port defaults
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 3000
 
 // Import models
 const Cars = require('./models/car.js');
@@ -39,9 +39,8 @@ app.get('/api/v0/cars', (req, res) => {
 });
 
 
-
 // JSON endpoint : specified car object based on ID
-app.get('/api/v0/photos/:id', (req, res) => {
+app.get('/api/v0/cars/:id', (req, res) => {
   Cars.findOne({id: req.params.id}, (err, result) => {
     if (err) {
       console.log(err);
@@ -50,7 +49,6 @@ app.get('/api/v0/photos/:id', (req, res) => {
     }
   });
 });
-
 
 
 // Middleware for 404 ERROR

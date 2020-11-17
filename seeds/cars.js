@@ -48,7 +48,7 @@ const cars = [
     id: 10,
     name: 'Land Rover',
     description: 'UK car company'
-  },
+  }
 ];
 
 module.exports = cars;
