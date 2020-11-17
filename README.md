@@ -14,7 +14,7 @@
 - Patrick Bello (trouble shooting)
 
 ### Summary:
-- This assignment demonstrates returning a JSON object through using mongoDB.
+- This assignment demonstrates returning a JSON object through using mongoDB endpoints.
 
 ### How to GET Endpoints:
 - Use this endpoint to get the array of objects: http://localhost:8080/api/v0/cars
