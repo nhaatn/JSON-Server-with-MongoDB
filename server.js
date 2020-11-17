@@ -26,6 +26,10 @@ mongoose.connect(process.env.MONGODB_URL, { useUnifiedTopology: true, useNewUrlP
   });
 
 
+// Home page endpoint for when heroku is launched
+app.get('/', (req, res) => {
+  res.send(`<h1>Welcome!</h1><h2>Add '/api/v0/clubs' to the current endpoint/url to return an array of objects.</h2><h2>or</h2><p>Add '/api/v0/clubs/(any integer betweeen 1-12, inclusive of both numbers)' to return an object with the specified id.</p>`);
+});
 
 // JSON endpoint : array of cars
 app.get('/api/v0/cars', (req, res) => {
